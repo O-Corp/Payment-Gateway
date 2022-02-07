@@ -4,6 +4,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C6BCEEFC-646
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentGateway.Web.Api", "src\PaymentGateway.Web.Api\PaymentGateway.Web.Api.csproj", "{F04CB53D-4478-4C74-B41B-B3745F11C21B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{89D3A736-13F9-48A1-AF35-4AABE49D6C77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentGateway.Web.Api.ComponentTests", "tests\PaymentGateway.Web.Api.ComponentTests\PaymentGateway.Web.Api.ComponentTests.csproj", "{422B1EB8-42F5-4575-B34A-3CE9749C39B2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -11,11 +15,16 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F04CB53D-4478-4C74-B41B-B3745F11C21B} = {C6BCEEFC-6464-49A1-B622-FBD52E5AB09D}
+		{422B1EB8-42F5-4575-B34A-3CE9749C39B2} = {89D3A736-13F9-48A1-AF35-4AABE49D6C77}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{F04CB53D-4478-4C74-B41B-B3745F11C21B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F04CB53D-4478-4C74-B41B-B3745F11C21B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F04CB53D-4478-4C74-B41B-B3745F11C21B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F04CB53D-4478-4C74-B41B-B3745F11C21B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{422B1EB8-42F5-4575-B34A-3CE9749C39B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{422B1EB8-42F5-4575-B34A-3CE9749C39B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{422B1EB8-42F5-4575-B34A-3CE9749C39B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{422B1EB8-42F5-4575-B34A-3CE9749C39B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
