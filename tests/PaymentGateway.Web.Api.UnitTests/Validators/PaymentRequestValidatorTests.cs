@@ -29,7 +29,24 @@ public class PaymentRequestValidatorTests
         Assert.That(error.ErrorCode, Is.EqualTo("InvalidAmount"));
         Assert.That(error.Message, Is.EqualTo("Amount is Invalid"));
     }
-
+        
+    [TestCase(null)]
+    [TestCase("")]
+    [TestCase(" ")]
+    [TestCase("XXX")]
+    [TestCase("123")]
+    public void Given_Invalid_Currency_Then_Return_Error(string currency)
+    {
+        var request = new RequestBuilder()
+            .WithValidRequest()
+            .WithCurrency(currency)
+            .Build();
+        var error = _subject.Validate(request).First();
+            
+        Assert.That(error.ErrorCode, Is.EqualTo("InvalidCurrency"));
+        Assert.That(error.Message, Is.EqualTo("Currency is Invalid"));
+    }
+        
     [Test]
     public void Given_Invalid_Card_Then_Return_Error()
     {
