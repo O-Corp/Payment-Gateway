@@ -113,7 +113,7 @@ namespace PaymentGateway.Web.Api.ComponentTests.Features
         testRunner.And("the error code is InvalidAmount and message is Amount is Invalid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 9
-        testRunner.And("the error code is InvalidCard and message is Card Details are Invalid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+        testRunner.And("the error code is InvalidCardNumber and message is Invalid Card Number", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -5,6 +5,13 @@ namespace PaymentGateway.Web.Api.Validators;
 
 public class PaymentRequestValidator
 {
+    private readonly CardValidator _cardValidator;
+
+    public PaymentRequestValidator()
+    {
+        _cardValidator = new CardValidator();
+    }
+    
     public List<ApiError> Validate(CardCaptureRequest request)
     {
         var errors = new List<ApiError>();
@@ -21,6 +28,10 @@ public class PaymentRequestValidator
         if (request?.Card == null)
         {
             errors.Add(ApiError.Create("InvalidCard", "Card Details are Invalid"));
+        }
+        else
+        {
+            errors.AddRange(_cardValidator.Validate(request.Card));
         }
 
         return errors;

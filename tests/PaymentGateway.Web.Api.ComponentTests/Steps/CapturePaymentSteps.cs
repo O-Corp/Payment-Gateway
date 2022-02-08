@@ -33,7 +33,7 @@ public class CapturePaymentSteps
     {
         _payload = new RequestBuilder()
             .WithValidRequest()
-            .WithCard(null)
+            .WithCardNumber("ABC")
             .WithAmount(0)
             .Build();
     }
