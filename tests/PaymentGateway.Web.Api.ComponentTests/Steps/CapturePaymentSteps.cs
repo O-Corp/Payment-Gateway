@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 using NUnit.Framework;
+using PaymentGateway.Web.Api.Models;
 using TechTalk.SpecFlow;
 
 namespace PaymentGateway.Web.Api.ComponentTests.Steps;
@@ -32,8 +33,6 @@ public class CapturePaymentSteps
         _payload = new RequestBuilder()
             .WithValidRequest()
             .WithAmount(0)
-            .WithCurrency(null)
-            .WithCard(null)
             .Build();
     }
 
@@ -61,22 +60,6 @@ public class CapturePaymentSteps
 
         Assert.That(error.ErrorCode, Is.EqualTo(code));
         Assert.That(error.Message, Is.EqualTo(message));
-    }
-}
-
-public class ApiError
-{
-    public string ErrorCode { get; set; }
-
-    public string Message { get; set; }
-
-    public static ApiError Create(string code, string message)
-    {
-        return new ApiError
-        {
-            Message = message,
-            ErrorCode = code
-        };
     }
 }
 
@@ -163,30 +146,4 @@ public class RequestBuilder
         _request.MerchantId = merchantId;
         return this;
     }
-}
-
-public class CardCaptureRequest
-{
-    public string PaymentReference { get; set; }
-    
-    public decimal Amount { get; set; }
-
-    public string Currency { get; set; }
-
-    public Card Card { get; set; }
-
-    public string MerchantId { get; set; }
-}
-
-public class Card
-{
-    public string CardHolderName { get; set; }
-
-    public string CardNumber { get; set; }
-
-    public string Cvv { get; set; }
-
-    public string ExpiryMonth { get; set; }
-
-    public string ExpiryYear { get; set; }
 }
