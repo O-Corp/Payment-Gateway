@@ -1,4 +1,6 @@
-﻿namespace PaymentGateway.Web.Api;
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace PaymentGateway.Web.Api;
 
 public class Startup
 {
@@ -14,6 +16,10 @@ public class Startup
         ConfigureDependencies(services);
 
         services
+            .Configure<ApiBehaviorOptions>(opt =>
+            {
+                opt.SuppressModelStateInvalidFilter = true;
+            })
             .AddLogging(opt =>
             {
                 opt.AddConsole();
