@@ -41,6 +41,11 @@ public class PaymentRequestValidator
         {
             errors.Add(ApiError.Create("InvalidAmount", "Amount is Invalid"));
         }
+        
+        if (request?.Card == null)
+        {
+            errors.Add(ApiError.Create("InvalidCard", "Card Details are Invalid"));
+        }
 
         return errors;
     }

@@ -32,6 +32,7 @@ public class CapturePaymentSteps
     {
         _payload = new RequestBuilder()
             .WithValidRequest()
+            .WithCard(null)
             .WithAmount(0)
             .Build();
     }
